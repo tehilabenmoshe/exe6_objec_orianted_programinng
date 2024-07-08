@@ -48,16 +48,27 @@ public class Main {
         while (!(myString = scanner.nextLine()).equals("q")) {
             switch (myString) {
                 case "c":
+                    ElementCountVisitor countVisitor = new ElementCountVisitor();
+                    root.accept(countVisitor);
+                    System.out.println(countVisitor.getCount());
                     //TODO: Add counting behavior
-
                     break;
                 case "sh":
+                    ShortPrintVisitor shortPrint = new ShortPrintVisitor();
+                    root.accept(shortPrint);
+                    System.out.println(shortPrint.getShortPrint());
                     //TODO: Add short representation behavior
                     break;
                 case "ta":
+                    AreaCalculatorVisitor areaCalculatorVisitor = new AreaCalculatorVisitor();
+                    root.accept(areaCalculatorVisitor);
+                    System.out.println(areaCalculatorVisitor.getTotalArea());
                     //TODO: Add area calculation behavior
                     break;
                 case "lp":
+                    LongPrintVisitor longPrint = new LongPrintVisitor();
+                    root.accept(longPrint);
+                    System.out.println(longPrint.getLongPrint());
                     //TODO: Add long representation behavior
                     break;
 
