@@ -8,7 +8,8 @@ public class Diagram extends PaperDecorator{
     public String write(){
         return super.write() + writeWithDiagram();
     }
+
     private String writeWithDiagram(){
-        return "Diagram";
+        return "Diagram ";
     }
 }

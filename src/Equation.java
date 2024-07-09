@@ -9,7 +9,7 @@ public class Equation extends PaperDecorator{
         return super.write() + writeWithEquation();
     }
     private String writeWithEquation(){
-        return "Equation";
+        return "Equation ";
     }
 }
 

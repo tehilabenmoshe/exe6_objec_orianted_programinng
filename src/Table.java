@@ -9,7 +9,7 @@ public class Table extends PaperDecorator{
         return super.write() + writeWithTable();
     }
     private String writeWithTable(){
-        return "Table";
+        return "Table ";
     }
 }
 

@@ -51,25 +51,21 @@ public class Main {
                     ElementCountVisitor countVisitor = new ElementCountVisitor();
                     root.accept(countVisitor);
                     System.out.println(countVisitor.getCount());
-                    //TODO: Add counting behavior
                     break;
                 case "sh":
                     ShortPrintVisitor shortPrint = new ShortPrintVisitor();
                     root.accept(shortPrint);
                     System.out.println(shortPrint.getShortPrint());
-                    //TODO: Add short representation behavior
                     break;
                 case "ta":
                     AreaCalculatorVisitor areaCalculatorVisitor = new AreaCalculatorVisitor();
                     root.accept(areaCalculatorVisitor);
                     System.out.println(areaCalculatorVisitor.getTotalArea());
-                    //TODO: Add area calculation behavior
                     break;
                 case "lp":
                     LongPrintVisitor longPrint = new LongPrintVisitor();
                     root.accept(longPrint);
                     System.out.println(longPrint.getLongPrint());
-                    //TODO: Add long representation behavior
                     break;
 
 
@@ -82,10 +78,10 @@ public class Main {
         System.out.println("Choose from the following paper:\n" +
                 "ac: academic paper\n" +
                 "cn: contract\n" +
-                "pr: journal article\n" +
+                "jr: journal article\n" +
                 "bk: book");
-        // TODO: Add a Paper Factory and use it to create a Paper
-        Paper paper = null;
+        String paperType = scanner.nextLine();
+        Paper paper = PaperFactory.createPaper(paperType);
         String choice="";
         while (!choice.equals("s")) {
             System.out.println("Choose from the following options:\n" +
@@ -97,7 +93,6 @@ public class Main {
             }
             if (choice.equals("s")) {
                 System.out.println(paper.write());
-
             }
         }
 
@@ -109,7 +104,7 @@ public class Main {
                 "eq: equation\n" +
                 "d: diagram\n" +
                 "nt: note");
-        // TODO: Use a Paper-Element Factory to create a decorated Hamburger
-        return null;
+       String elementType = scanner.nextLine();
+       return PaperFactory.addAttribute(paper, elementType);
     }
 }

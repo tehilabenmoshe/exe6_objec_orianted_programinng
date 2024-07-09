@@ -2,7 +2,7 @@ public class PaperFactory {
 
     public static Paper createPaper(String code){
 
-        switch (code){
+        switch (code.toLowerCase()){
 
             case "ac":
                 return new AcademicPaper();
@@ -15,7 +15,29 @@ public class PaperFactory {
 
             case "bk":
                 return new Book();
+
+            default:
+                throw new IllegalArgumentException("Unknown page name.");
         }
-        throw new RuntimeException("wrong PaperType");
+    }
+
+    public static Paper addAttribute(Paper paper, String attribute) {
+
+        switch (attribute.toLowerCase()) {
+            case "tb":
+                return new Table(paper);
+
+            case "eq":
+                return new Equation(paper);
+
+            case "d":
+                return new Diagram(paper);
+
+            case "nt":
+                return new Note(paper);
+
+            default:
+                throw new IllegalArgumentException("Unknown attribute.");
+        }
     }
 }

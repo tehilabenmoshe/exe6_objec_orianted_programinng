@@ -8,7 +8,8 @@ public class Note extends PaperDecorator{
     public String write(){
         return super.write() + writeWithNote();
     }
+
     private String writeWithNote(){
-        return "Note";
+        return "Note ";
     }
 }
