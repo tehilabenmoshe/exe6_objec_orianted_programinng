@@ -41,7 +41,7 @@ public class AreaCalculatorVisitor implements Visitor{
 
     @Override
     public void visit(Tree tree) {
-        double area = (tree.getWidth() / 2.0) * tree.getLength();
+        double area = (tree.getWidth() * tree.getLength())/ 2.0;
         totalArea += area;
     }
 
