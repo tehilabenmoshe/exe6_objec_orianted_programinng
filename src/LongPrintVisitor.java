@@ -27,9 +27,9 @@ public class LongPrintVisitor implements Visitor{
     public void visit(Lake lake) {
         List <SimpleElement> list = lake.getElements();
         if(list.isEmpty()){
-            str += "An empty lake named " + lake.getName() + ". ";
+            str += "A empty lake named " + lake.getName() + ". ";
         }else {
-            str += "An lake named " + lake.getName() + " containing: ";
+            str += "A lake named " + lake.getName() + " containing: ";
         }
     }
 
@@ -45,17 +45,17 @@ public class LongPrintVisitor implements Visitor{
 
     @Override
     public void visit(Tree tree) {
-        str += "An tree with an amount of " + tree.getLeavesAmount() + " leaves. ";
+        str += "A tree with an amount of " + tree.getLeavesAmount() + " leaves. ";
     }
 
     @Override
     public void visit(Kid kid) {
         int year = 2024 - (int)kid.getBirthYear();
-        str += "A " + year + " old kid with " + kid.getHairColor() + " hair. ";
+        str += "A " + year + " year old kid with " + kid.getHairColor() + " hair. ";
     }
 
     @Override
     public void visit(Kite kite) {
-        str += "A flag of color: " + kite.getColor() + ". ";
+        str += "A kite of color: " + kite.getColor() + ". ";
     }
 }

@@ -1,6 +1,7 @@
 // TODO: Implement Composite (change this file).
  
 public class Island extends CompositeElement {
+
     public Island(String name, double diameter, String path) {
         super(diameter,diameter,path, name);
         //TODO: fix
@@ -8,7 +9,7 @@ public class Island extends CompositeElement {
 
     @Override
     public Habitat getHabitat() {
-        return Habitat.TERRESTRIAL;
+        return Habitat.AQUATIC;
     }
 
     @Override
@@ -21,7 +22,7 @@ public class Island extends CompositeElement {
     }
 
     public void addElement(SimpleElement element){
-        if(element.getHabitat() == Habitat.TERRESTRIAL || element.getHabitat() ==Habitat.AMPHIBIAN) {
+        if(element.getHabitat() == Habitat.TERRESTRIAL || element.getHabitat() == Habitat.AMPHIBIAN) {
             elementList.add(element);
         } else{
             System.out.println(this.getName() + " cannot contain an " + element.getClass());

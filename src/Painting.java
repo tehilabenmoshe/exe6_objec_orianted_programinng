@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Painting implements Element{
+
     Map<String, SimpleElement> pathToElementMap;
     List<SimpleElement> elementList;
 

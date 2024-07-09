@@ -12,37 +12,37 @@ public class ShortPrintVisitor implements Visitor{
 
     @Override
     public void visit(Island island) {
-        str += island.getPath();
+        str += (island.getFullName()+"\n");
     }
 
     @Override
     public void visit(Lake lake) {
-        str += lake.getPath();
+        str += (lake.getFullName()+"\n");
     }
 
     @Override
     public void visit(Boat boat) {
-        str += boat.getPath();
+        str += (boat.getFullName()+"\n");
     }
 
     @Override
     public void visit(Flag flag) {
-        str += flag.getPath();
+        str += (flag.getFullName()+"\n");
     }
 
     @Override
     public void visit(Tree tree) {
-        str += tree.getPath();
+        str += (tree.getFullName()+"\n");
     }
 
     @Override
     public void visit(Kid kid) {
-        str += kid.getPath();
+        str += (kid.getFullName()+"\n");
     }
 
     @Override
     public void visit(Kite kite) {
-        str += kite.getPath();
+        str += (kite.getFullName()+"\n");
     }
 
 }
