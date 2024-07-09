@@ -4,7 +4,7 @@ public class AreaCalculatorVisitor implements Visitor{
     private int totalArea = 0;
 
     public int getTotalArea() {
-        return totalArea;
+        return Math.round(totalArea);
     }
 
     @Override
@@ -15,14 +15,14 @@ public class AreaCalculatorVisitor implements Visitor{
     public void visit(Island island) {
         double r = island.getWidth() / 2.0;
         double area = Math.PI * Math.pow(r, 2);
-        totalArea +=  (int)area;
+        totalArea +=  area;
     }
 
     @Override
     public void visit(Lake lake) {
         double r = lake.getWidth() / 2.0;
         double area = Math.PI * Math.pow(r, 2);
-        totalArea +=  (int)area;
+        totalArea +=  area;
     }
 
     @Override
@@ -30,19 +30,19 @@ public class AreaCalculatorVisitor implements Visitor{
         double r = boat.getWidth() / 2.0;
         double len = (boat.getLength() - r);
         double area = boat.getWidth() * len + Math.PI * Math.pow(r, 2) / 2;
-        totalArea += (int)area;
+        totalArea += area;
     }
 
     @Override
     public void visit(Flag flag) {
         double area = flag.getWidth() * flag.getLength();
-        totalArea += (int)area;
+        totalArea += area;
     }
 
     @Override
     public void visit(Tree tree) {
         double area = (tree.getWidth() / 2.0) * tree.getLength();
-        totalArea += (int)area;
+        totalArea += area;
     }
 
     @Override
@@ -50,12 +50,12 @@ public class AreaCalculatorVisitor implements Visitor{
         double r = kid.getWidth() / 2.0;
         double lenRect = (kid.getLength() - kid.getWidth());
         double area = kid.getWidth() * lenRect + Math.PI * Math.pow(r, 2);
-        totalArea += (int)area;
+        totalArea += area;
     }
 
     @Override
     public void visit(Kite kite) {
         double area = kite.getWidth() * kite.getLength() / 2.0;
-        totalArea += (int)area;
+        totalArea += area;
     }
 }
