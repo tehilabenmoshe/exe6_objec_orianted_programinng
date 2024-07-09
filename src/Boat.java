@@ -5,7 +5,7 @@ public class Boat extends SimpleElement{
 
     public Boat(double width, double length, Material m, String path) {
         super(width, length, path);
-        this.material=m;
+        this.material = m;
     }
 
     public Material getMaterial() {

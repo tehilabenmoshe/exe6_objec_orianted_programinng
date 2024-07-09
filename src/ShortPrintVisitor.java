@@ -3,7 +3,7 @@ public class ShortPrintVisitor implements Visitor{
     private String str = "";
 
     public String getShortPrint() {
-        return str;
+        return str.trim();
     }
 
     @Override

@@ -7,7 +7,7 @@ public class Lake extends CompositeElement {
 
     @Override
     public Habitat getHabitat() {
-        return Habitat.AQUATIC;
+        return Habitat.TERRESTRIAL;
     }
 
     @Override

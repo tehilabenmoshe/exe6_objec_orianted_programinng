@@ -4,7 +4,6 @@ public class Island extends CompositeElement {
 
     public Island(String name, double diameter, String path) {
         super(diameter,diameter,path, name);
-        //TODO: fix
     }
 
     @Override
@@ -25,7 +24,7 @@ public class Island extends CompositeElement {
         if(element.getHabitat() == Habitat.TERRESTRIAL || element.getHabitat() == Habitat.AMPHIBIAN) {
             elementList.add(element);
         } else{
-            System.out.println(this.getName() + " cannot contain an " + element.getClass());
+            System.out.println(this.getName() + " cannot contain an " + element.getName());
         }
     }
 }

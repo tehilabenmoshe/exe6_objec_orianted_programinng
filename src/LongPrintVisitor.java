@@ -40,7 +40,7 @@ public class LongPrintVisitor implements Visitor{
 
     @Override
     public void visit(Flag flag) {
-        str += "A flag of color: " + flag.getColor() + flag.getCarrierHeight();
+        str += "A flag with color: " + flag.getColor() + " of height " + flag.getCarrierHeight() + ". ";
     }
 
     @Override

@@ -24,7 +24,6 @@ public class Painting implements Element{
                 ((CompositeElement) containingElement).addElement((SimpleElement)element);
             }
             else{throw new RuntimeException("ERROR");}
-			//TODO: add element as a child of containingElement
         }
     }
 
@@ -38,6 +37,4 @@ public class Painting implements Element{
     public String getName() {
         return Painting.class.getSimpleName().toLowerCase();
     }
-
-    public Habitat getHabitat(){ return Habitat.TERRESTRIAL; }
 }
