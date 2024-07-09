@@ -45,7 +45,7 @@ public class LongPrintVisitor implements Visitor{
 
     @Override
     public void visit(Tree tree) {
-        str += "An tree with an amount of " + tree.getLeavesAmount() + " leaves. "
+        str += "An tree with an amount of " + tree.getLeavesAmount() + " leaves. ";
     }
 
     @Override

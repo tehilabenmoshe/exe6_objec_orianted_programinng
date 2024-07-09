@@ -2,7 +2,6 @@ public abstract class SimpleElement implements Element{
     protected double width;
     protected double length;
     private String path;
-    private String name;
 
     public double getWidth() {
         return width;
@@ -33,5 +32,6 @@ public abstract class SimpleElement implements Element{
         return path.isEmpty()? getName() : path+"/"+getName();
     }
     public abstract String getName();
+
     public abstract Habitat getHabitat();
 }

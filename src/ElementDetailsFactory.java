@@ -27,7 +27,7 @@ public class ElementDetailsFactory {
     private final static String LAKE_CAPTURE_PATTERN = "name: (\\w+), diameter: (\\d+)";
 
 
-    public static SimpleElement getPaintingElement(String description){
+    public static Element getPaintingElement(String description){
         Matcher pathMatcher = getMatcher(PATH_CAPTURE_PATTERN, description);
         String elementPath = pathMatcher.group(1);
         String elementType = pathMatcher.group(2);

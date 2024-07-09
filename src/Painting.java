@@ -12,13 +12,17 @@ public class Painting implements Element{
         pathToElementMap = new HashMap<>();
     }
 
-    public void addElement(SimpleElement element){
-        pathToElementMap.put(element.getFullName(), element);
-        if (element.getPath().isEmpty()){
-            elementList.add(element);
+    public void addElement(Element element){
+        pathToElementMap.put(((SimpleElement)element).getFullName(), (SimpleElement)element);
+        if (((SimpleElement)element).getPath().isEmpty()){
+            elementList.add((SimpleElement)element);
         }
         else {
-            SimpleElement containingElement = pathToElementMap.get(element.getPath());
+            SimpleElement containingElement = pathToElementMap.get(((SimpleElement)element).getPath());
+            if (containingElement instanceof CompositeElement){
+                ((CompositeElement) containingElement).addElement((SimpleElement)element);
+            }
+            else{throw new RuntimeException("ERROR");}
 			//TODO: add element as a child of containingElement
         }
     }

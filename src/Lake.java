@@ -1,19 +1,13 @@
  
 public class Lake extends CompositeElement {
     public Lake(String name, double diameter, String path) {
+        super(diameter,diameter,path, name);
         //TODO: fix
-        super(0,0,null);
-    }
-
-    @Override
-    public String getName() {
-        //TODO: fix
-        return null;
     }
 
     @Override
     public Habitat getHabitat() {
-        return Habitat.TERRESTRIAL;
+        return Habitat.AQUATIC;
     }
 
     @Override
@@ -26,10 +20,10 @@ public class Lake extends CompositeElement {
 
 
     public void addElement(SimpleElement element){
-        if(element.getHabitat() != Habitat.AQUATIC) {
+        if(element.getHabitat() == Habitat.AQUATIC || element.getHabitat() == Habitat.AMPHIBIAN) {
             elementList.add(element);
         } else{
-            System.out.println(this.getName() + " cannot contain an " + element.getClass());
+            System.out.println(this.getName() + " cannot contain " + element.getClass());
         }
     }
 }
